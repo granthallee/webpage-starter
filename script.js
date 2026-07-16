@@ -16,7 +16,7 @@ function get_next_hint(data, data_keys){
     let next_hint_num = Math.floor(Math.random()*num_possible_hints);
     next_hint_title = data_keys[next_hint_num] //gets the title of the first hint
     next_hint_content = data[next_hint_title] 
-  }while(next_hint_content.includes(secret_country)); //makes sure the hint doesnt contain the country name
+  }while(next_hint_content.includes(secret_country) || next_hint_title == "url"); //makes sure the hint doesnt contain the country name and is not just the url from world factbook
   return next_hint_title + ": " + next_hint_content //returns the full hint content
 }
 
