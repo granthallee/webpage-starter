@@ -10,10 +10,10 @@ let score = 200
 //function that gets random data for a hint and returns it formatted correctly as str
 function get_next_hint(data, data_keys){
   let num_possible_hints = data_keys.length; 
-  let next_hint_num = Math.floor(Math.random()*num_possible_hints);
   let next_hint_title = ""
   do{
-     next_hint_title = data_keys[next_hint_num] //gets the title of the first hint
+    let next_hint_num = Math.floor(Math.random()*num_possible_hints);
+    next_hint_title = data_keys[next_hint_num] //gets the title of the first hint
   }while(next_hint_title.includes(secret_country)); //makes sure the hint doesnt contain the country name
   let next_hint_content = data[next_hint_title]
   return next_hint_title + ": " + next_hint_content //returns the full hint content
